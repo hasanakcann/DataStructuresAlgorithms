@@ -1,0 +1,29 @@
+﻿List<T> ve Array (dizi) arasındaki temel farklar şunlardır:
+
+1. Boyut Değişkenliği
+Array: Boyutu sabittir. Tanımlandıktan sonra boyutu değiştirilemez.
+List<T>: Dinamik bir koleksiyondur. Eleman ekleyip çıkarabilirsiniz, boyutu değiştirilebilir.
+
+2. Performans
+Array: Daha hızlıdır çünkü bellek tahsisi ve elemanlara erişim doğrudan yapılır.
+List<T>: Daha esnektir ancak iç yapısında bir Array kullanır ve eleman eklendikçe boyutu artırmak için yeni bir dizi oluşturup eski veriyi taşır, bu da ek yük oluşturur.
+
+3. Kullanım Kolaylığı
+Array: Daha az özellik sunar, indeks tabanlı erişim vardır.
+List<T>: Add(), Remove(), Contains(), Sort() gibi birçok yardımcı metod içerir.
+
+4. Bellek Yönetimi
+Array: Daha az bellek harcar çünkü fazladan kapasite tahsis etmez.
+List<T>: Kapasitesini artırmak için belirli aralıklarla bellekte yeniden tahsis yapılır.
+
+5. Generic Desteği
+Array: Türü belirleyebilirsiniz (int[], string[] vb.), ancak ArrayList gibi eski koleksiyonlar object tabanlıdır.
+List<T>: Tür güvenliği sağlar (List<int>, List<string> vb.).
+
+6. Çok Boyutluluk
+Array: Çok boyutlu diziler (int[,], int[][]) kullanılabilir.
+List<T>: Sadece tek boyutludur, ancak List<List<int>> gibi iç içe koleksiyonlar oluşturulabilir.
+
+Hangisini Kullanmalıyız?
+Boyutu sabit olan ve performans kritik olan durumlarda Array tercih edilir.
+Dinamik ve daha esnek bir yapı istiyorsanız List<T> daha uygundur.
