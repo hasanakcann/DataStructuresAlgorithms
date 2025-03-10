@@ -1,0 +1,62 @@
+﻿Question: Majority Element
+
+Given an array nums of size n, return the majority element.
+
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+
+Example 1:
+Input: nums = [3,2,3]
+Output: 3
+
+Example 2:
+Input: nums = [2,2,1,1,1,2,2]
+Output: 2
+
+Constraints:
+
+n == nums.length
+1 <= n <= 5 * 104
+-109 <= nums[i] <= 109
+ 
+********************************* Çözüm Yaklaşımı *********************************
+
+Majority Element (Çoğunluk Elemanı) problemi, dizilerde en çok tekrar eden öğeyi bulma problemidir.
+
+Majority Element Tanımı:
+Bir dizideki majority element, dizinin yarısından fazla bir sayıda tekrar eden elemandır. Yani, bir eleman ⌊n/2⌋ (n: dizinin uzunluğu) veya daha fazla kez tekrarlanıyorsa, o eleman majority element olarak kabul edilir.
+
+[2, 2, 1, 1, 1, 2, 2]
+2 majority element'tir.
+
+Majority Element'in Özellikleri:
+
+1. Bazı dizilerde majority element olmayabilir.
+[1, 2, 3, 4, 5]
+
+2. Birden Fazla Majority Element Olmaz:
+Eğer dizinin majority element'i varsa, sadece bir tane olabilir.
+
+Çözümler:
+Bu tür bir problemi çözmek için birkaç farklı yaklaşım vardır. En popüler ve etkili yöntemler:
+
+1. HashMap (Dictionary) Yöntemi:
+Bu yöntemde, her elemanın tekrar sayısını takip etmek için bir Dictionary (veya HashMap) kullanılır.
+
+Her elemanı dizi üzerinde tek tek gezerek, her bir elemanın sayısını artırırız.
+
+Diziyi geçtikten sonra, en fazla tekrar eden eleman majority element olarak kabul edilir.
+
+Zaman Karmaşıklığı: O(n)
+Alan Karmaşıklığı: O(n)
+
+2. Boyer-Moore Majority Voting Algoritması:
+Boyer-Moore algoritması, majority element'ini bulmak için daha verimli bir yöntemdir.
+
+Bu algoritma, diziyi sadece bir kez tarayarak majority element'i bulur. Algoritma, bir "aday" seçer ve o adayı oylayarak doğruluğunu kontrol eder.
+
+Eğer bir eleman mevcut adayla eşleşirse, o elemanın oyu artırılır. Eşleşmezse, oyu bir azaltılır. Eğer oyu sıfırlanırsa, yeni bir aday seçilir.
+
+Zaman Karmaşıklığı: O(n) Time Complexity
+Alan Karmaşıklığı: O(1)  Space Complexity
+
+Çoğunlukla bu problemi çözmek için Boyer-Moore algoritması daha verimli olduğu için tercih edilir. Ancak küçük dizilerde HashMap çözümü de oldukça etkilidir.
