@@ -1,0 +1,78 @@
+﻿Question: Contains Duplicate
+
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+Example 1:
+Input: nums = [1,2,3,1]
+Output: true
+Explanation:
+The element 1 occurs at the indices 0 and 3.
+
+Example 2:
+Input: nums = [1,2,3,4]
+Output: false
+Explanation:
+All elements are distinct.
+
+Example 3:
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+Output: true
+
+Constraints:
+1 <= nums.length <= 105
+-109 <= nums[i] <= 109
+
+********************************* Çözüm Yaklaşımı *********************************
+
+1. Çözüm: HashSet ile Tekrar Eden Elemanları Bulma
+Adımlar:
+
+HashSet Kullanımı:
+HashSet<int>, sadece benzersiz elemanları tutabilen bir koleksiyondur. Aynı eleman birden fazla kez eklenmeye çalışıldığında, bu eleman zaten var olduğu için eklenmez.
+Bu özelliği kullanarak, dizinin her bir elemanını tek tek kontrol ederiz. Eğer eleman daha önce eklenmişse, tekrar eden bir eleman bulmuş oluruz.
+
+Algoritma:
+-> Dizi üzerinde gezinme: Dizinin her elemanını tek tek kontrol ederiz.
+-> Eleman ekleme: Eğer o eleman HashSet içinde zaten varsa, bu eleman tekrar ettiği için fonksiyon true döndürür.
+-> Eleman eklememe: Eğer o eleman HashSet içinde yoksa, elemanı HashSet'e ekleriz ve dizinin devamına geçeriz.
+-> Tüm elemanlar benzersizse: Eğer diziyi tamamlarsak ve hiçbir tekrar eden eleman bulamazsak, false döneriz.
+
+Zaman Karmaşıklığı:
+O(n): Dizi üzerinde tek bir geçiş yaparız ve her HashSet.Add() operasyonu ortalama O(1) zaman alır.
+
+Alan Karmaşıklığı:
+O(n): HashSet, dizinin benzersiz elemanlarını saklamak için ekstra alan kullanır. Yani, n elemanlı bir dizi için n kadar alan gereklidir.
+
+2. Çözüm: Liste Uzunluğu ile Benzersiz Elemanların Sayısını Karşılaştırma
+Adımlar:
+
+Bu çözümde, HashSet kullanarak benzersiz elemanların sayısını doğrudan karşılaştırıyoruz.
+
+HashSet Kullanımı:
+Yine, HashSet benzersiz elemanları tutar. Bu kez, diziyi tek bir adımda HashSet'e dönüştürüp benzersiz eleman sayısını alıyoruz.
+
+Algoritma:
+Diziyi HashSet<int>(nums) şeklinde doğrudan HashSet'e dönüştürürüz.
+Bu dönüşüm sırasında, HashSet dizideki tüm benzersiz elemanları toplar.
+Eğer dizinin uzunluğu ile HashSet'in uzunluğu eşit değilse, dizide tekrar eden elemanlar vardır ve true döndürürüz.
+Eğer eşitse, tüm elemanlar benzersizdir ve false döndürürüz.
+
+Zaman Karmaşıklığı:
+O(n): HashSet'e dönüştürme işlemi, diziyi bir kez okuma işlemi olduğu için O(n) zaman alır. Ayrıca, nums.Length ve HashSet.Count hesaplamaları da O(1) zaman alır.
+
+Alan Karmaşıklığı:
+O(n): HashSet'in her benzersiz elemanı saklamak için ek alan kullanması gerektiği için, bu çözümde de O(n) alan kullanılır.
+
+=> Karşılaştırma ve Özet
+
+Yöntem								Zaman Karmaşıklığı		Alan Karmaşıklığı		Açıklama
+HashSet ile Tekrar Kontrolü			O(n)					O(n)					Dizinin her elemanını tek tek kontrol ederiz. Eğer aynı eleman tekrar ederse true döneriz.
+Liste Uzunluğu ile Karşılaştırma	O(n)					O(n)					HashSet'e dönüşümle benzersiz elemanların sayısını alır, sonra dizinin uzunluğu ile karşılaştırırız.
+
+HashSet ile Tekrar Kontrolü: Elemanları tek tek kontrol edip, tekrar eden bir eleman bulduğumuzda işimizi bitiririz. Bu çözüm daha esnektir çünkü dizinin tamamını gezmeye gerek kalmadan bir eleman bulunur bulunmaz sonucu döndürür.
+Liste Uzunluğu ile Karşılaştırma: HashSet'e dönüştürme işlemi yapılır ve HashSet.Count ile dizinin uzunluğu karşılaştırılır. Bu çözüm biraz daha kısa yazılabilir, ancak dizinin tüm elemanlarını okuduktan sonra sonucu döndürür.
+
+=> Hangi Durumda Hangisini Seçmeliyiz?
+Eğer mümkünse diziyi erken bir aşamada bitirmek istiyorsanız, HashSet ile Tekrar Kontrolü yöntemini seçmek daha iyi olabilir. Çünkü bir tekrar bulduğunuz anda hemen dönebilirsiniz.
+
+Eğer kodunuzu daha kısa ve basit yazmak istiyorsanız, Liste Uzunluğu ile Karşılaştırma çözümü ideal olabilir, ancak bu çözüm tüm diziyi bir kez dönmek zorunda olduğu için erken çıkış yapmaz.

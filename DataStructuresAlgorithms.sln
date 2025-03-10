@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "Array\Array.csproj", "{871A9F62-D5A4-4928-8F47-85E7AB7F4F31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigO", "BigO\BigO.csproj", "{2EFF16BB-074F-4B0E-9D51-FF290F9AD965}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{871A9F62-D5A4-4928-8F47-85E7AB7F4F31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{871A9F62-D5A4-4928-8F47-85E7AB7F4F31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{871A9F62-D5A4-4928-8F47-85E7AB7F4F31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{871A9F62-D5A4-4928-8F47-85E7AB7F4F31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EFF16BB-074F-4B0E-9D51-FF290F9AD965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EFF16BB-074F-4B0E-9D51-FF290F9AD965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EFF16BB-074F-4B0E-9D51-FF290F9AD965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EFF16BB-074F-4B0E-9D51-FF290F9AD965}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B517C720-5F98-44C9-A5B6-298A1CDA2EFD}
+	EndGlobalSection
+EndGlobal
