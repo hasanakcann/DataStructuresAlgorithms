@@ -1,5 +1,5 @@
 
-![big-o-complexity-chart](https://github.com/user-attachments/assets/f17da41e-51ee-4b2c-b63e-6ce0a6d73068)
+![image](https://github.com/user-attachments/assets/b80a66a9-9fe2-42e1-bb49-8b92179fa2b3)
 
 **Big O Notation -> O()**
 
@@ -37,8 +37,8 @@ Karesel karmaşıklık gösteren algoritmalar, büyük veri kümeleri için veri
 
 Üstel ve faktöriyel zaman alan algoritmalar çok hızlı büyüdüğünden büyük veri setlerinde kullanılamaz.Örnek: Gezgin Satıcı Problemi (TSP), brute-force çözümler
 
-![image](https://github.com/user-attachments/assets/67e0374c-a9bc-4901-8418-5d9f6a7c6c8b)
+![image](https://github.com/user-attachments/assets/f61a68b5-37b4-4274-bca3-d39d24ba89cb)
 
-![image](https://github.com/user-attachments/assets/ee8deb38-8be9-4aa8-9488-9e6a8d877650)
+![image](https://github.com/user-attachments/assets/666f3cc5-b81e-4682-a04b-af22ce9b01de)
 
-![image](https://github.com/user-attachments/assets/4a384a0f-7b4e-4f78-aaa2-4810b3029526)
+![image](https://github.com/user-attachments/assets/7bfde3c3-191b-4096-8c2e-c406af127f6f)
