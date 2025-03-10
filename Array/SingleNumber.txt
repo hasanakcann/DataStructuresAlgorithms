@@ -1,0 +1,136 @@
+﻿Question: Single Number 
+
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+Example 1:
+Input: nums = [2,2,1]
+Output: 1
+
+Example 2:
+Input: nums = [4,1,2,1,2]
+Output: 4
+
+Example 3:
+Input: nums = [1]
+Output: 1
+
+Constraints:
+1 <= nums.length <= 3 * 104
+-3 * 104 <= nums[i] <= 3 * 104
+Each element in the array appears twice except for one element which appears only once.
+
+**************************************** Çözüm Yaklaşımı ****************************************
+
+Tekrarsız Sayıyı Bulma (Single Number) Algoritmasının Detaylı Açıklaması
+
+Problemin Açıklaması
+Bize verilen dizideki tüm sayılar çift kez geçiyor, sadece bir sayı tek başına bulunuyor.
+Bizden istenen, bu tek geçen sayıyı bulmak.
+
+Çözüm Yöntemi: XOR (^) Bitwise Operatörü Kullanımı:
+Bu problem için XOR (^) operatörünü kullanarak verimli bir çözüm üretebiliriz.
+
+Bit 1		Bit 2		Sonuç (XOR)
+0			0			0
+0			1			1
+1			0			1
+1			1			0
+
+Kurallar:
+Aynı olan bitler 0 olur.
+Farklı olan bitler 1 olur.
+
+XOR’un Önemli Özellikleri:
+
+1. Bir sayıyı kendisiyle XOR’lamak sıfır verir:
+a ^ a = 0
+Örnek: 5 ^ 5 = 0, 10 ^ 10 = 0
+
+2. Bir sayıyı 0 ile XOR’lamak sayının kendisini verir:
+a ^ 0 = a
+Örnek: 5 ^ 0 = 5, 10 ^ 0 = 10
+
+3.XOR değişme özelliğine sahiptir (sayıların sırası önemli değildir):
+a ^ b ^ c = c ^ a ^ b
+Örnek: 2 ^ 3 ^ 4 = 4 ^ 3 ^ 2
+
+Bu özellikler sayesinde, bir dizide tekrar eden tüm sayılar birbirini sıfırlarken, yalnızca tek geçen sayı sonuç olarak kalır.
+
+nums = [4, 1, 2, 1, 2]
+
+Bunu XOR işlemi ile takip edelim:
+
+Adım				İşlem					uniqueNumber Değeri
+Başlangıç			uniqueNumber = 0				0
+1. Adım				0 ^ 4							4
+2. Adım				4 ^ 1							5
+3. Adım				5 ^ 2							7
+4. Adım				7 ^ 1							6
+5. Adım				6 ^ 2							4
+
+Sonuç: 4
+Çünkü dizide sadece 4 bir kez geçti, diğer sayılar (1 ve 2) çift kez geçtiği için birbirlerini sıfırladı.
+
+XOR’un Bit Düzeyinde Çalışmasını Gözlemleyelim:
+4, 1, 2, 1, 2 değerlerini ikili (binary) sayı sisteminde XOR işlemine tabi tutalım:
+
+Sayı	Binary Karşılığı
+4		0100
+1		0001
+2		0010
+1		0001
+2		0010
+
+Adım 1: 0 ^ 4
+0  = 0000
+4  = 0100
+-------------
+XOR = 0100  (4)
+
+Adım 2: 4 ^ 1
+4  = 0100
+1  = 0001
+-------------
+XOR = 0101  (5)
+
+Adım 3: 5 ^ 2
+5  = 0101
+2  = 0010
+-------------
+XOR = 0111  (7)
+
+Adım 4: 7 ^ 1
+7  = 0111
+1  = 0001
+-------------
+XOR = 0110  (6)
+
+Adım 5: 6 ^ 2
+6  = 0110
+2  = 0010
+-------------
+XOR = 0100  (4)
+
+Sonuç yine 4, çünkü diğer tüm sayılar kendilerini sıfırladı.
+
+Algoritmanın Zaman ve Alan Karmaşıklığı
+Karmaşıklık									Açıklama
+Zaman Karmaşıklığı: O(n)					Çünkü dizideki her elemanı sadece 1 kez geziyoruz.
+Alan Karmaşıklığı: O(1)						Ekstra hafıza (bellek) kullanmadan, sadece 1 değişken (uniqueNumber) tutuyoruz.
+
+Bu Çözüm Neden Verimli?
+-> Fazladan belleğe ihtiyaç duymaz
+-> Zaman karmaşıklığı O(n) ile en hızlı çözümlerden biridir
+-> Tekrar edenleri otomatik olarak sıfırlar, ekstra kontrol gerektirmez
+-> Bitwise işlemler, toplama-çıkarma gibi işlemlerden daha hızlıdır
+
+Alternatif Yöntemler (Neden XOR Daha İyi?)
+Yöntem					Zaman Karmaşıklığı		Alan Karmaşıklığı			Açıklama
+Sıralama (Sort)			O(n log n)				O(1)						Önce sıralayıp, ardından tek geçen sayıyı bulabiliriz. Ancak sıralama ek maliyet getirir.
+HashSet Kullanımı		O(n)					O(n)						Sayıları bir HashSet içine ekleyip tekrar edenleri çıkarabiliriz. Ancak ekstra bellek kullanır.
+XOR (^) Kullanımı		O(n)					O(1)						En hızlı ve en az bellek kullanan çözüm.
+
+Sonuç:
+Bu algoritma, XOR işleminin özelliklerini kullanarak, fazladan bellek harcamadan ve en verimli şekilde tekrarsız olan sayıyı bulmamızı sağlıyor. O(n) zaman karmaşıklığında ve O(1) alan karmaşıklığında çalışarak optimal bir çözüm sunuyor. 
